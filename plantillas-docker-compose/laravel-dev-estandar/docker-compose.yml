@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+    web:
+        container_name: nombre_aplicacion_web
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        ports:
+            - "81:80"
+        volumes:
+            - ./:/var/www
+            - ./public:/var/www/html
+    mysql:
+        container_name: nombre_aplicacion_mysql
+        image: mysql:5.7.35
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+        ports:
+            - "3307:3306"
