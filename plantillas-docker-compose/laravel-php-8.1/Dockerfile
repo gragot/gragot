@@ -25,7 +25,7 @@ RUN docker-php-ext-install zip
 
 # Creamos un usuario con el gui del usuario del sitema y permisos de root para que los archivos que se generen
 # dentro del contenedor se puedan eliminar desde  windows
-RUN useradd -rm -d /home/testuser7 -s /bin/bash -g root -G sudo -u 1000 docker
+RUN useradd -rm -d /home/docker -s /bin/bash -g root -G sudo -u 1000 docker
 # Ponemos el nuevo usuario por defecto para hacer login cuando nos conectamos al contendor con "docker exec"
 USER docker
 
